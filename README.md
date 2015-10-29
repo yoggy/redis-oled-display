@@ -41,14 +41,13 @@ Compile & Run
 How to use
 ----
 
-    $ redis-cli
-    $ redis 127.0.0.1:6379> set oled:0 title
+    $ redis-cli set "oled:0" "================"
     OK
-    $ redis 127.0.0.1:6379> set oled:1 "test string"
+    $ redis-cli set "oled:1" "  Redis->OLED   "
     OK
-    $ redis 127.0.0.1:6379> set oled:2 "test test test"
+    $ redis-cli set "oled:2" "  Display       "
     OK
-    $ redis 127.0.0.1:6379> set oled:3 "0123456789012345"
+    $ redis-cli set "oled:3" "================"
     OK
 
 Copyright and license
