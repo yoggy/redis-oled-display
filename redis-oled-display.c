@@ -171,7 +171,7 @@ void LCD_WrDat(unsigned char dat)
 
 	while(i--)
 	{
-		if(dat&0x80) {
+		if(dat & 0x80) {
 			digitalWrite(12, 1);
 		}
 		else {
@@ -194,7 +194,7 @@ void LCD_WrCmd(unsigned char cmd)
 
 	while(i--)
 	{
-		if(cmd&0x80){
+		if(cmd & 0x80){
 			digitalWrite(12, 1);
 		}
 		else{
@@ -298,7 +298,12 @@ void LCD_Str(unsigned char x,unsigned char y,unsigned char ch[])
 	if (len > 16) len = 16;
 
 	for (j = 0; j < len; ++j) {
-		c = ch[j] - 32;
+		if (32 <= ch[j] && ch[j] <= 32 + 94) {
+			c = ch[j] - 32;
+		}
+		else {
+			c = 0;
+		}
 		if(x > 120) {
 			x = 0;
 			y++;
@@ -391,7 +396,7 @@ int main(int argc, char *argv[])
 			reply = redisCommand(ctx, "GET oled:%d", i);
 			if (reply == NULL) {
 				LCD_Err("redisCommand() failed...");
-				return -1;
+				continue;
 			}
 			if (reply->type == REDIS_REPLY_ERROR) {
 				LCD_Str(0, 2 * i, "                ");
@@ -404,7 +409,7 @@ int main(int argc, char *argv[])
 				freeReplyObject(reply);
 				continue;
 			}
-	
+
 			// copy string to buffer
 			len = strlen(reply->str);
 			if (len > 16) len = 16;
@@ -417,7 +422,7 @@ int main(int argc, char *argv[])
 
 			freeReplyObject(reply);
 		}
-		
+
 		delay(200);
 	}
 
