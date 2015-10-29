@@ -35,7 +35,7 @@ Compile & Run
     $ git clone https://github.com/yoggy/redis-oled-display.git
     $ cd redis-oled-display
       
-    $ gcc redis-oled-display.c -o redis-oled-display -lwiringPi -lhiredis
+    $ make
     $ sudo ./redis-oled-display
 
 How to use

@@ -1,7 +1,7 @@
 //
 // redis-oled-display.c - Display driver program for Raspberry Pi 0.96inch LED Display Module
 //
-// setup:
+// Setup:
 //   $ sudo apt-get install redis-server
 //   $ sudo apt-get install git-core
 //   $ mkdir -p ~/work
@@ -19,15 +19,15 @@
 //   
 //   $ sudo ldconfig
 //
-// compile & run:
+// Compile & Run:
 //   $ cd ~/work
 //   $ git clone https://github.com/yoggy/redis-oled-display.git
 //   $ cd redis-oled-display
 //
-//   $ gcc redis-oled-display.c -o redis-oled-display -lwiringPi -lhiredis
+//   $ make
 //   $ sudo ./redis-oled-display
 //
-// how to use:
+// How to use:
 //   $ redis-cli
 //   $ redis 127.0.0.1:6379> set oled:0 title
 //   OK
@@ -38,11 +38,11 @@
 //   $ redis 127.0.0.1:6379> set oled:3 "0123456789012345"
 //   OK
 //
-// see also :
+// See also :
 //   http://www.seeedstudio.com/depot/Raspberry-Pi-096-OLED-Display-Module-p-2390.html
 //   http://akizukidenshi.com/catalog/g/gP-09346/
 //
-// license:
+// License:
 //   Copyright (c) 2015 yoggy <yoggy0@gmail.com>
 //   Released under the MIT license
 //   http://opensource.org/licenses/mit-license.php
@@ -418,7 +418,7 @@ int main(int argc, char *argv[])
 			freeReplyObject(reply);
 		}
 		
-		delay(500);
+		delay(200);
 	}
 
 	return 0;
