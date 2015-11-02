@@ -28,7 +28,6 @@
 //   $ sudo ./redis-oled-display
 //
 // How to use:
-//   $ redis-cli
 //   $ redis 127.0.0.1:6379> set oled:0 title
 //   OK
 //   $ redis 127.0.0.1:6379> set oled:1 "test string"
