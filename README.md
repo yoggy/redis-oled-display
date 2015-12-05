@@ -13,12 +13,8 @@ Setup
 
     $ sudo apt-get install redis-server
     $ sudo apt-get install git-core
+    $ sudo apt-get install wiringpi
     $ mkdir -p ~/work
-     
-    $ cd ~/work
-    $ git clone git://git.drogon.net/wiringPi
-    $ cd wiringPi
-    $ ./build
      
     $ cd ~/work
     $ git clone https://github.com/redis/hiredis.git
